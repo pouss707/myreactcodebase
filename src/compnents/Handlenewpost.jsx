@@ -1,5 +1,5 @@
 import React from 'react';
-import './Handlenewpost.css'; // Assuming you have a CSS file for styling
+
 
 function Handlenewpost({ newpost, setNewpost }) {
     const onDelete = (id) => {

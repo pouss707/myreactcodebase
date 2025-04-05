@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './BodyMassIndex.css'; // Assuming you have a CSS file for styling
+
 
 function BodyMassIndex() {
     const [height, setHeight] = useState('');

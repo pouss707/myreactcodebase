@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Handlenewpost from './Handlenewpost';
-import './Postsharing.css'; // Assuming you have a CSS file for styling
+
 function Postsharing() {
     const [newpost, setNewpost] = useState({
         name: '',

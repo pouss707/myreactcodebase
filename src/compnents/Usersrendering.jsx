@@ -1,5 +1,5 @@
 import React from 'react'
-import './Usersrendering.css'; // Assuming you have a CSS file for styling
+
 function Usersrendering() {
     const users = [
         { id: 1, name: "John Doe", age: 25, email: "john@example.com" },

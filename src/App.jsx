@@ -8,9 +8,14 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <BodyMassIndex />
-      <Usersrendering />
-      <Postsharing />
+      <div className='firstrow'>
+        <BodyMassIndex />
+        <Usersrendering />
+        <Postsharing />
+      </div>
+
+
+
     </div>
   )
 }
