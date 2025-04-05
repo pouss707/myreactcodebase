@@ -1,0 +1,11 @@
+.userlist{
+    background-color: #8b9efc;
+    padding: 10px;
+    margin-right: 5%;
+    margin-left: 50%;
+    border-radius: 5px;
+    text-align: left;
+  }
+  .title{
+    text-align: center;
+  }
