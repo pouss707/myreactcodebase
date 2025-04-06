@@ -40,18 +40,17 @@ function Postsharing() {
     return (
         <div className='posts'>
             <form onSubmit={handleNewPost}>
-                <h1>New Post</h1>
-                <label htmlFor="name">Name: </label>
+                <h1 className='formtitle'>create a new post</h1>
+                <br />
+                <label htmlFor="name"></label>
                 <input
                     id='name'
                     type="text"
                     value={newpost.name}
                     onChange={(e) => setNewpost({ ...newpost, name: e.target.value })}
-                    placeholder="Name"
-                />
-
+                    placeholder="Name" />
                 <br />
-                <label htmlFor="email">Email: </label>
+                <label htmlFor="email"></label>
                 <input
                     id='email'
                     type="email"
@@ -59,60 +58,71 @@ function Postsharing() {
                     onChange={(e) => setNewpost({ ...newpost, email: e.target.value })}
                     pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.com"
                     required
-                    placeholder="example@gmail.com"
-                />
-
+                    placeholder="example@gmail.com" />
                 <br />
-                <label htmlFor="male">Male</label>
-                <input
-                    id='male'
-                    type="radio"
-                    value="male"
-                    checked={newpost.gender === 'male'}
-                    onChange={(e) => setNewpost({ ...newpost, gender: e.target.value })}
-                />
-                <label htmlFor="female">Female</label>
-                <input
-                    id='female'
-                    type="radio"
-                    value="female"
-                    checked={newpost.gender === 'female'}
-                    onChange={(e) => setNewpost({ ...newpost, gender: e.target.value })}
-                />
+                <div className='radio-wrapper'>
+                    <label htmlFor="male" className='rlabel'>Male:</label>
+                    <input
+                        className='gender'
+                        id='male'
+                        type="radio"
+                        value="male"
+                        checked={newpost.gender === 'male'}
+                        onChange={(e) => setNewpost({ ...newpost, gender: e.target.value })} />
+                    <label htmlFor="female" className='rlabel'>Female:</label>
+                    <input
+                        className='gender'
+                        id='female'
+                        type="radio"
+                        value="female"
+                        checked={newpost.gender === 'female'}
+                        onChange={(e) => setNewpost({ ...newpost, gender: e.target.value })} />
+                    <select
+                        className='drop'
+                        value={newpost.country}
+                        onChange={(e) => setNewpost({ ...newpost, country: e.target.value })}>
+                        <option value="">--Please choose an option--</option>
+                        <option value="morocco" >Morocco</option>
+                        <option value="france" >France</option>
+                        <option value="USA" >USA</option>
+                        <option value="spain" >Spain</option>
+                    </select>
+                </div>
                 <br />
-                <select
-                    value={newpost.country}
-                    onChange={(e) => setNewpost({ ...newpost, country: e.target.value })}>
-                    <option value="">--Please choose an option--</option>
-                    <option value="morocco" >Morocco</option>
-                    <option value="france" >France</option>
-                    <option value="USA" >USA</option>
-                    <option value="spain" >Spain</option>
-                </select>
-                <br />
-                <label htmlFor="beginner">Beginner: </label>
-                <input
-                    id='beginner'
-                    type="checkbox"
-                    value="beginner"
-                    checked={newpost.level === 'beginner'}
-                    onChange={(e) => setNewpost({ ...newpost, level: e.target.value })} />
-                <br />
-                <label htmlFor="Intermediate">Intermediate: </label>
-                <input
-                    id='Intermediate'
-                    type="checkbox"
-                    value="Intermediate"
-                    checked={newpost.level === 'Intermediate'}
-                    onChange={(e) => setNewpost({ ...newpost, level: e.target.value })} />
-                <br />
-                <label htmlFor="Expert">Expert: </label>
-                <input
-                    id='Expert'
-                    type="checkbox"
-                    value="Expert"
-                    checked={newpost.level === 'Expert'}
-                    onChange={(e) => setNewpost({ ...newpost, level: e.target.value })} />
+                <div className='checkbox-wrapper'>
+                    <label className='container'>
+                        <span class="box">Beginner</span>
+                        <input
+                            id='beginner'
+                            type="checkbox"
+                            value="beginner"
+                            checked={newpost.level === 'beginner'}
+                            onChange={(e) => setNewpost({ ...newpost, level: e.target.value })} />
+                        <div className='checkmark'></div>
+                    </label>
+                    <br />
+                    <label className='container'>
+                        <span class="box">Intermediate</span>
+                        <input
+                            id='Intermediate'
+                            type="checkbox"
+                            value="Intermediate"
+                            checked={newpost.level === 'Intermediate'}
+                            onChange={(e) => setNewpost({ ...newpost, level: e.target.value })} />
+                        <div className='checkmark'></div>
+                    </label>
+                    <br />
+                    <label htmlFor="Expert" className='container'>
+                        <span class="box">Expert</span>
+                        <input
+                            id='Expert'
+                            type="checkbox"
+                            value="Expert"
+                            checked={newpost.level === 'Expert'}
+                            onChange={(e) => setNewpost({ ...newpost, level: e.target.value })} />
+                        <div className='checkmark'></div>
+                    </label>
+                </div>
                 <br />
                 <button type="submit">SHARE</button>
             </form>

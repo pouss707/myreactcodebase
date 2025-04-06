@@ -1,5 +1,5 @@
 import React from 'react';
-
+import logo from '../assets/user.png'
 
 function Handlenewpost({ newpost, setNewpost }) {
     const onDelete = (id) => {
@@ -10,20 +10,24 @@ function Handlenewpost({ newpost, setNewpost }) {
     };
     return (
         <div>
-            <h2>Posts</h2>
+            <h1 className='formtitle'>Posts</h1>
             {newpost.posts.length > 0 ? (
                 newpost.posts.map((post) => (
                     <div key={post.id} className="post">
-                        <h3>Name: {post.name}</h3>
+                        <div className='imgname'>
+                            <img src={logo} alt="" />
+                            <h3 className='postname'>Name: {post.name}</h3>
+                        </div>
                         <br />
-                        <p>Email: {post.email}</p>
-                        <br />
-                        <p>Gender: {post.gender}</p>
-                        <br />
-                        <p>Country: {post.country}</p>
-                        <br />
-                        <p>Level: {post.level}</p>
-                        <button onClick={() => onDelete(post.id)}>Delete</button>
+                        <div className='detailscontainer'>
+                            <div className='postdetails'>
+                                <p>Email: {post.email}</p>
+                                <p>Gender: {post.gender}</p>
+                                <p>Country: {post.country}</p>
+                                <p>Level: {post.level}</p>
+                            </div>
+                            <button className='deletebtn' onClick={() => onDelete(post.id)}>Delete</button>
+                        </div>
                     </div>
                 ))
             ) : (
