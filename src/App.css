@@ -263,3 +263,11 @@ input {
 .formtitle{
   color: black;
 }
+.calculator{
+  background-color: #61DAFB;
+  padding: 10px;
+  margin-right: 5%;
+  border-radius: 5px;
+  justify-content: center;
+  color: black;
+}
