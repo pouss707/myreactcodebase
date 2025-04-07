@@ -1,5 +1,6 @@
 import React from 'react';
-import logo from '../assets/user.png'
+import logo1 from '../assets/usermale.png'
+import logo2 from '../assets/userfemale.png'
 
 function Handlenewpost({ newpost, setNewpost }) {
     const onDelete = (id) => {
@@ -15,7 +16,7 @@ function Handlenewpost({ newpost, setNewpost }) {
                 newpost.posts.map((post) => (
                     <div key={post.id} className="post">
                         <div className='imgname'>
-                            <img src={logo} alt="" />
+                            {post.gender === 'male' ? <img src={logo1} alt="male" /> : <img src={logo2} alt="female" />}
                             <h3 className='postname'>Name: {post.name}</h3>
                         </div>
                         <br />
