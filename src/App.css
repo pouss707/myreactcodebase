@@ -5,6 +5,11 @@
   padding: 0;
   text-align: center;
 }
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
 .userlist{
   background-color: #61DAFB;
   color: black;
@@ -17,12 +22,67 @@
   text-align: center;
 }
 .header {
-  background-color: #1347af;
-  padding: 20px;
-  color: white;
+  height: 50px;
+  display: flex;
+  justify-content: space-between; /* Push title to left and nav to right */
+  align-items: center; /* Center align vertically */
+  padding: 10px 20px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.05) 0 3px 15px;
+  color: black;
+}
+.title {
+  font-size: 24px;
+  font-weight: bold;
+}
+.nav ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px; 
+}
+.nav ul li {
+  margin-left: 20px;
+  border-radius: 5px;
+  border: 2px solid black;
+  background-color: white;
+  box-shadow: 4px 4px black;
+  font-size: 16px;
+  font-weight: 600;
+  color: black;
+  cursor: pointer;
+  padding: 5px;
+  transition: all 250ms;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  margin: 0 auto;
+}
+.nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+.nav ul li a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: #212121;
+  z-index: -1;
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+}
+.nav ul li a:hover {
+  color: #e8e8e8;
+}
+.nav ul li a:hover::before {
   width: 100%;
-  font-size: 30px;
-  text-align: left;
 }
 .posts{
   background-color: #61DAFB;
@@ -88,6 +148,7 @@ img{
   padding: 10px;
   margin-left: 5%;
   border-radius: 5px;
+  gap: 10px;
 }
 .firstrow {
   display: grid;
@@ -270,4 +331,34 @@ input {
   border-radius: 5px;
   justify-content: center;
   color: black;
+}
+.result{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 1rem;
+}
+.resultinput{
+width: 300px;
+margin-left: 130px;
+}
+.resultbtn{
+width: 90px;
+height: 40px;
+margin-right: 168px;
+padding: 30px;
+}
+section {
+  height: 100vh;
+  background: #61DAFB;
+}
+section span {
+  color: black;
+  margin: 0;
+  font-size: 400%;
+  text-align: center;
+  line-height: 1;
+  padding-top: calc(50vh - 20pt);
+  display: block;
+  font-weight: 700;
 }

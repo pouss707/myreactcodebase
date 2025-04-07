@@ -40,22 +40,23 @@ function BodyMassIndex() {
                     onChange={(e) => setHeight(e.target.value)}
                     placeholder="Height in (m)"
                 />
-                <br />
                 <input
                     type="text"
                     value={weight}
                     onChange={(e) => setWeight(e.target.value)}
                     placeholder="Weight in (kg)"
                 />
-                <br />
-                <button type="submit">Submit</button>
-                <br />
-                <input
-                    type="text"
-                    value={result}
-                    readOnly
-                    placeholder="Your result"
-                />
+                <div className="result">
+                    <input
+                        className='resultinput'
+                        type="text"
+                        value={result}
+                        readOnly
+                        style={{ pointerEvents: 'none' }}
+                        placeholder="Your result"
+                    />
+                    <button className='resultbtn' type="submit">Submit</button>
+                </div>
             </form>
         </div>
     );

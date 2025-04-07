@@ -91,7 +91,7 @@ function Postsharing() {
                 <br />
                 <div className='checkbox-wrapper'>
                     <label className='container'>
-                        <span class="box">Beginner</span>
+                        <span className="box">Beginner</span>
                         <input
                             id='beginner'
                             type="checkbox"
@@ -102,7 +102,7 @@ function Postsharing() {
                     </label>
                     <br />
                     <label className='container'>
-                        <span class="box">Intermediate</span>
+                        <span className="box">Intermediate</span>
                         <input
                             id='Intermediate'
                             type="checkbox"
@@ -113,7 +113,7 @@ function Postsharing() {
                     </label>
                     <br />
                     <label htmlFor="Expert" className='container'>
-                        <span class="box">Expert</span>
+                        <span className="box">Expert</span>
                         <input
                             id='Expert'
                             type="checkbox"
