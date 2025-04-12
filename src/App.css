@@ -1,89 +1,3 @@
-#root {
-  width: 100%;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-}
-body, html {
-  margin: 0;
-  padding: 0;
-}
-
-.userlist{
-  background-color: #61DAFB;
-  color: black;
-  padding: 10px;
-  margin-right: 5%;
-  border-radius: 5px;
-  text-align: left;
-}
-.title{
-  text-align: center;
-}
-.header {
-  height: 50px;
-  display: flex;
-  justify-content: space-between; /* Push title to left and nav to right */
-  align-items: center; /* Center align vertically */
-  padding: 10px 20px;
-  background-color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.05) 0 3px 15px;
-  color: black;
-}
-.title {
-  font-size: 24px;
-  font-weight: bold;
-}
-.nav ul {
-  display: flex;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  gap: 20px; 
-}
-.nav ul li {
-  margin-left: 20px;
-  border-radius: 5px;
-  border: 2px solid black;
-  background-color: white;
-  box-shadow: 4px 4px black;
-  font-size: 16px;
-  font-weight: 600;
-  color: black;
-  cursor: pointer;
-  padding: 5px;
-  transition: all 250ms;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  margin: 0 auto;
-}
-.nav ul li a {
-  text-decoration: none;
-  color: #333;
-  font-size: 16px;
-  transition: color 0.3s;
-}
-.nav ul li a::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 0;
-  background-color: #212121;
-  z-index: -1;
-  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-  transition: all 250ms;
-}
-.nav ul li a:hover {
-  color: #e8e8e8;
-}
-.nav ul li a:hover::before {
-  width: 100%;
-}
 .posts{
   background-color: #61DAFB;
   padding: 10px;
@@ -91,112 +5,12 @@ body, html {
   border-radius: 5px;
   justify-content: center;
 }
-.post{
-  width: 50%;
-  background-color:#6c5ce7 ;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  margin: 20px;
-  justify-content: center;
-  margin: 0 auto;
-  margin-bottom: 10px;
-}
-img{
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-.imgname {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-left: 15px;
-  color: black;
-}
-.postdetails p{
-  color: black;
-  font-weight: bold;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 10px;
-  margin: 5px;
-}
-.postname {
-  margin-top: 10px;
-  font-weight: bold;
-  text-align: center;
-}
-.deletebtn{
-  width: 150px;
-  cursor: pointer;
-  align-self: flex-end;
-  margin-top: 20px;
-}
-.detailscontainer{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex: 1;
-}
-.bmiform {
-  background-color: #61DAFB;
-  color: black;
-  padding: 10px;
-  margin-left: 5%;
-  border-radius: 5px;
-  gap: 10px;
-}
-.firstrow {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  padding: 1rem;
-}
-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  padding: auto 15px 15px auto;
-  width: 250px;
-  height: 40px;
-  border-radius: 5px;
-  border: 2px solid black;
-  background-color: white;
-  box-shadow: 4px 4px black;
-  font-size: 16px;
-  font-weight: 600;
-  color: black;
-  cursor: pointer;
-  transition: all 250ms;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  margin: 0 auto;
-}
-Button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 0;
-  background-color: #212121;
-  z-index: -1;
-  -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-  transition: all 250ms;
-}
-Button:hover {
-  color: #e8e8e8;
-}
-Button:hover::before {
-  width: 100%;
-}
+
+
+
+
+
+
 .container {
   --input-focus: white;
   --input-out-of-focus: #ccc;
@@ -242,18 +56,7 @@ Button:hover::before {
   background-color: var(--input-focus);
 }
 
-.checkmark:after {
-  content: "";
-  position: absolute;
-  top: 6px;
-  left: 11px;
-  width: 6px;
-  height: 12px;
-  border: solid var(--bg-color);
-  border-width: 0 2.5px 2.5px 0;
-  transform: rotate(45deg);
-  display: none;
-}
+
 
 .container input:checked ~ .checkmark:after {
   display: block;
@@ -324,41 +127,4 @@ input {
 .formtitle{
   color: black;
 }
-.calculator{
-  background-color: #61DAFB;
-  padding: 10px;
-  margin-right: 5%;
-  border-radius: 5px;
-  justify-content: center;
-  color: black;
-}
-.result{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  padding: 1rem;
-}
-.resultinput{
-width: 300px;
-margin-left: 130px;
-}
-.resultbtn{
-width: 90px;
-height: 40px;
-margin-right: 168px;
-padding: 30px;
-}
-section {
-  height: 100vh;
-  background: #61DAFB;
-}
-section span {
-  color: black;
-  margin: 0;
-  font-size: 400%;
-  text-align: center;
-  line-height: 1;
-  padding-top: calc(50vh - 20pt);
-  display: block;
-  font-weight: 700;
-}
+
