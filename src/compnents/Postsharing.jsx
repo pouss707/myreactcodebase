@@ -42,7 +42,7 @@ function Postsharing() {
         <div className='bg-white h-screen w-screen'>
             <header className="bg-blue-400 text-black flex justify-between items-center p-[10px] h-[60px] shadow-[0_0_0_0.05_black] font-bold">
                 <h1 className='text-[24px]' >MyReactCodeBase</h1>
-                <nav className='mr-[10px] p-[10px]'>
+                <nav className='mr-[10px] p-[10px] '>
                     <ul className="flex gap-[10px]  list-image-none ">
                         <li className='
                         rounded-[5px]
@@ -94,7 +94,7 @@ function Postsharing() {
                         z-10
                         m-0
                         p-[5px]
-                         '><Link to={"/Usersrendering"}>Usersredering</Link></li>
+                         '><Link to={"/Usersrendering"}>Users</Link></li>
                         <li className='
                         rounded-[5px]
                         border-[2px]
@@ -111,12 +111,12 @@ function Postsharing() {
                         z-10
                         m-0
                         p-[5px]
-                         '><Link to={"/Calculator"}>Calculator</Link></li>
+                         '><Link to={"/Calculator"}>Calc</Link></li>
                     </ul>
                 </nav>
             </header>
             <div className='bg-white h-screen w-screen flex justify-center items-center ' >
-                <div className='bg-blue-400 flex flex-col justify-center items-center text-black rounded-[5px] p-[10px] relative  '>
+                <div className='bg-blue-400 flex flex-col shadow-[4px_4px_black] justify-center items-center text-black rounded-[5px] p-[10px] relative  '>
                     <form onSubmit={handleNewPost}>
                         <h1 className='text-black text-[20px] font-bold mt-[10px] ml-[10px]'>create a new post</h1>
                         <br />
@@ -216,7 +216,7 @@ function Postsharing() {
                         before:-z-10 before:shadow-[4px_8px_19px_-3px_rgba(0,0,0,0.27)]
                         before:transition-all before:duration-250 hover:before:w-full" type="submit">SHARE</button>
                     </form>
-                    <hr />
+
                     <div className=''>
                         <Handlenewpost setNewpost={setNewpost} newpost={newpost} />
                     </div>

@@ -71,7 +71,7 @@ function BodyMassIndex() {
                         z-10
                         m-0
                         p-[5px]
-                         '><Link to={"/Postsharing"}>Postsharing</Link></li>
+                         '><Link to={"/Postsharing"}>Posts</Link></li>
                         <li className='
                         rounded-[5px]
                         border-[2px]
@@ -88,7 +88,7 @@ function BodyMassIndex() {
                         z-10
                         m-0
                         p-[5px]
-                         '><Link to={"/Usersrendering"}>Usersredering</Link></li>
+                         '><Link to={"/Usersrendering"}>Users</Link></li>
                         <li className='
                         rounded-[5px]
                         border-[2px]
@@ -105,7 +105,7 @@ function BodyMassIndex() {
                         z-10
                         m-0
                         p-[5px]
-                         '><Link to={"/Calculator"}>Calculator</Link></li>
+                         '><Link to={"/Calculator"}>Calc</Link></li>
                     </ul>
                 </nav>
             </header>
