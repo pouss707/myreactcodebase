@@ -1,5 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom'
 function Calculator() {
     const [num, setNum] = useState(0)
@@ -103,7 +105,7 @@ function Calculator() {
                         before:left-0 before:h-full before:w-0 before:bg-[#212121]
                         before:-z-10 before:shadow-[4px_8px_19px_-3px_rgba(0,0,0,0.27)]
                         before:transition-all before:duration-250 hover:before:w-full'
-                        onClick={() => { num > 0 ? (setNum(num - 1)) : (0) }}>-</button>
+                        onClick={() => { num > 0 ? (setNum(num - 1)) : (0) }}><FontAwesomeIcon icon={faCoffee} /></button>
                 </div>
             </div>
         </div>
