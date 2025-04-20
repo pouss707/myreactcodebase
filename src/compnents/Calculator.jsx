@@ -80,6 +80,23 @@ function Calculator() {
                         m-0
                         p-[5px]
                          '><Link to={"/BodyMassIndex"}>Bmi</Link></li>
+                        <li className='
+                        rounded-[5px]
+                        border-[2px]
+                        border-black
+                        bg-white
+                        shadow-[4px_4px_black]
+                        text-[16px]
+                        font-black
+                        cursor-pointer
+                        transition-all
+                        duration-250
+                        position:relative
+                        overflow-hidden
+                        z-10
+                        m-0
+                        p-[5px]
+                         '><Link to={"/Weather"}>weather</Link></li>
                     </ul>
                 </nav>
             </header>

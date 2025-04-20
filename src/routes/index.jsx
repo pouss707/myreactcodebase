@@ -5,6 +5,7 @@ import Postsharing from "../compnents/Postsharing";
 import BodyMassIndex from "../compnents/BodyMassIndex";
 import Usersrendering from "../compnents/Usersrendering";
 import Calculator from "../compnents/Calculator";
+import Weather from "../compnents/Weather";
 const AppRoutes = () => {
     return (
         <Routes>
@@ -13,6 +14,7 @@ const AppRoutes = () => {
             <Route path="/Usersrendering" element={<Usersrendering />} />
             <Route path="/Postsharing" element={<Postsharing />} />
             <Route path="/Calculator" element={<Calculator />} />
+            <Route path="/Weather" element={<Weather />} />
         </Routes>
     );
 }

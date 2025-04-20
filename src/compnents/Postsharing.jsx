@@ -112,6 +112,23 @@ function Postsharing() {
                         m-0
                         p-[5px]
                          '><Link to={"/Calculator"}>Calc</Link></li>
+                        <li className='
+                        rounded-[5px]
+                        border-[2px]
+                        border-black
+                        bg-white
+                        shadow-[4px_4px_black]
+                        text-[16px]
+                        font-black
+                        cursor-pointer
+                        transition-all
+                        duration-250
+                        position:relative
+                        overflow-hidden
+                        z-10
+                        m-0
+                        p-[5px]
+                         '><Link to={"/Weather"}>weather</Link></li>
                     </ul>
                 </nav>
             </header>
@@ -177,7 +194,7 @@ function Postsharing() {
                                     value="beginner"
                                     checked={newpost.level === 'beginner'}
                                     onChange={(e) => setNewpost({ ...newpost, level: e.target.value })} />
-                                <div class="flex justify-center items-center shadow-[4px_4px_black] font-bold w-[110px] h-[40px] border-2 rounded-[5px] p-[5px] text-black border-black bg-white peer-checked:bg-black peer-checked:border-white peer-checked:text-white transition-colors duration-200">Buiginner</div>
+                                <div className="flex justify-center items-center shadow-[4px_4px_black] font-bold w-[110px] h-[40px] border-2 rounded-[5px] p-[5px] text-black border-black bg-white peer-checked:bg-black peer-checked:border-white peer-checked:text-white transition-colors duration-200">Buiginner</div>
                             </label>
                             <br />
                             <label className='inline-flex items-center cursor-pointer '>
@@ -188,7 +205,7 @@ function Postsharing() {
                                     value="Intermediate"
                                     checked={newpost.level === 'Intermediate'}
                                     onChange={(e) => setNewpost({ ...newpost, level: e.target.value })} />
-                                <div class="flex justify-center items-center shadow-[4px_4px_black] font-bold w-[110px] h-[40px] border-2 rounded-[5px] p-[5px] text-black border-black bg-white peer-checked:bg-black peer-checked:border-white peer-checked:text-white transition-colors duration-200">Intermediate</div>
+                                <div className="flex justify-center items-center shadow-[4px_4px_black] font-bold w-[110px] h-[40px] border-2 rounded-[5px] p-[5px] text-black border-black bg-white peer-checked:bg-black peer-checked:border-white peer-checked:text-white transition-colors duration-200">Intermediate</div>
 
                             </label>
                             <br />
@@ -200,7 +217,7 @@ function Postsharing() {
                                     value="Expert"
                                     checked={newpost.level === 'Expert'}
                                     onChange={(e) => setNewpost({ ...newpost, level: e.target.value })} />
-                                <div class="flex justify-center items-center shadow-[4px_4px_black] font-bold w-[110px] h-[40px] border-2 rounded-[5px] p-[5px] text-black border-black bg-white peer-checked:bg-black peer-checked:border-white peer-checked:text-white transition-colors duration-200">Expert</div>
+                                <div className="flex justify-center items-center shadow-[4px_4px_black] font-bold w-[110px] h-[40px] border-2 rounded-[5px] p-[5px] text-black border-black bg-white peer-checked:bg-black peer-checked:border-white peer-checked:text-white transition-colors duration-200">Expert</div>
 
                             </label>
                         </div>
