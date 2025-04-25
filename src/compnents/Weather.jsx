@@ -25,76 +25,68 @@ import nightbg from '../assets/nightbg.png'
 import morningbg from '../assets/morningbg.png'
 
 function Weather() {
-    const [tempo, setTempo] = useState(0)
-    const [feelsLike, setFeelsLike] = useState(0)
-    const [windspeed, setWindspeed] = useState(0)
-    const [timezone, setTimezone] = useState('')
-    const [weatherCode, setWeatherCode] = useState(0)
-    const [daynight, setDaynight] = useState(1)
-    const [humidity, setHumidity] = useState(0)
-    const [sunrisetime, setSunrisetime] = useState('')
-    const [sunsettime, setSunsettime] = useState('')
+    const [data, setData] = useState(null)
 
     useEffect(() => {
-        axios.get('https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&daily=sunrise,sunset&models=icon_seamless&current=temperature_2m,relative_humidity_2m,is_day,apparent_temperature,precipitation,rain,showers,snowfall,weather_code,cloud_cover,pressure_msl,surface_pressure,wind_speed_10m,wind_direction_10m,wind_gusts_10m')
-            .then(function (response) {
-                setTempo(response.data.current.temperature_2m)
-                setFeelsLike(response.data.current.apparent_temperature)
-                setWindspeed(response.data.current.wind_speed_10m)
-                setTimezone(response.data.current.time)
-                setWeatherCode(response.data.current.weather_code)
-                setDaynight(response.data.current.is_day)
-                setHumidity(response.data.current.relative_humidity_2m)
-                setSunrisetime(response.data.daily.sunrise[0])
-                setSunsettime(response.data.daily.sunset[0])
-            })
-            .catch(function (error) {
-                console.log(error);
-            })
+        const fetchData = async () => {
+            try {
+                const response = await axios.get('https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&daily=sunrise,sunset&models=icon_seamless&current=temperature_2m,relative_humidity_2m,is_day,apparent_temperature,precipitation,rain,showers,snowfall,weather_code,cloud_cover,pressure_msl,surface_pressure,wind_speed_10m,wind_direction_10m,wind_gusts_10m')
+                setData({
+                    current: response.data.current,
+                    daily: response.data.daily
+                })
+                console.log(response.data)
+            } catch (error) {
+                console.error('Error fetching users:', error)
+            }
+        }
+
+        fetchData()
     }, [])
+
     function weather() {
-        if (weatherCode === 0) {
-            return daynight === 1
+        if (data.current.weather_code === 0) {
+            return data.current.is_day === 1
                 ? <img className='h-[150px] w-[150px]' src={clearskysun} alt="clearskysun" />
                 : <img className='h-[150px] w-[150px]' src={clearskymoon} alt="clearskymoon" />
-        } else if (weatherCode === 1) {
-            return daynight === 1
+        } else if (data.current.weather_code === 1) {
+            return data.current.is_day === 1
                 ? <img className='h-[150px] w-[150px]' src={partlycloudy} alt="partlycloudy" />
                 : <img className='h-[150px] w-[150px]' src={partlycloudymoon} alt="partlycloudymoon" />
-        } else if (weatherCode === 2) {
-            return daynight === 1
+        } else if (data.current.weather_code === 2) {
+            return data.current.is_day === 1
                 ? <img className='h-[150px] w-[150px]' src={mainlyclear} alt="mainlyclear" />
                 : <img className='h-[150px] w-[150px]' src={mainlyclearmoon} alt="mainlyclearmoon" />
-        } else if (weatherCode === 3) {
+        } else if (data.current.weather_code === 3) {
             return <img className='h-[150px] w-[150px]' src={overcast} alt="overcast" />
-        } else if (weatherCode === 61) {
-            return daynight === 1
+        } else if (data.current.weather_code === 61) {
+            return data.current.is_day === 1
                 ? <img className='h-[150px] w-[150px]' src={slightrain} alt="slightrain" />
                 : <img className='h-[150px] w-[150px]' src={slightrainmoon} alt="slightrainmoon" />
-        } else if (weatherCode === 65) {
+        } else if (data.current.weather_code === 65) {
             return <img className='h-[150px] w-[150px]' src={heavyrain} alt="heavyrain" />
-        } else if (weatherCode === 73) {
+        } else if (data.current.weather_code === 73) {
             return <img className='h-[150px] w-[150px]' src={heavysnowfall} alt="heavysnowfall" />
-        } else if (weatherCode === 99) {
+        } else if (data.current.weather_code === 99) {
             return <img className='h-[150px] w-[150px]' src={thunder} alt="thunder" />
         }
     }
     function Weathertext() {
-        if (weatherCode === 0) {
+        if (data.current.weather_code === 0) {
             return "Clear sky"
-        } else if (weatherCode === 1) {
+        } else if (data.current.weather_code === 1) {
             return "Partly cloudy"
-        } else if (weatherCode === 2) {
+        } else if (data.current.weather_code === 2) {
             return "Mainly clear"
-        } else if (weatherCode === 3) {
+        } else if (data.current.weather_code === 3) {
             return "Overcast"
-        } else if (weatherCode === 61) {
+        } else if (data.current.weather_code === 61) {
             return "Slight rain"
-        } else if (weatherCode === 65) {
+        } else if (data.current.weather_code === 65) {
             return "Heavy rain"
-        } else if (weatherCode === 73) {
+        } else if (data.current.weather_code === 73) {
             return "snowfall"
-        } else if (weatherCode === 99) {
+        } else if (data.current.weather_code === 99) {
             return "Thunderstorm"
         }
     }
@@ -112,54 +104,56 @@ function Weather() {
                     </ul>
                 </nav>
             </header>
-            <div style={{ backgroundImage: `url(${daynight === 1 ? morningbg : nightbg})`, }} className={`h-screen w-screen flex justify-center items-center p-[20px] bg-cover bg-center`}>
-                <div className='bg-blue-400 h-[650px] w-[650px] rounded-[5px] shadow-[0px_0px_10px_2px_black] '>
-                    <div className='flex items-center justify-center  gap-[50px] h-[50%]'>
-                        <div className='flex flex-col items-center justify-center'>
-                            {weather()}
-                            {Weathertext()}
+            {data && (
+                <div style={{ backgroundImage: `url(${data.current.is_day === 1 ? morningbg : nightbg})` }} className={`h-screen w-screen flex justify-center items-center p-[20px] bg-cover bg-center`}>
+                    <div className='bg-blue-400 h-[650px] w-[650px] rounded-[5px] shadow-[0px_0px_10px_2px_black] '>
+                        <div className='flex items-center justify-center  gap-[50px] h-[50%]'>
+                            <div className='flex flex-col items-center justify-center'>
+                                {weather()}
+                                {Weathertext()}
+                            </div>
+                            <div className='flex flex-col items-center justify-center mb-[100px]'>
+                                <h1 className='text-[150px] '>fes</h1>
+                                <h3>{data.current.time}</h3>
+                            </div>
+                            <div>
+                                <img className='w-[150px] h-[150px]' src={temp} alt="temp" />
+                                <h1 className='flex flex-col items-center justify-center'>{data.current.temperature_2m}°C</h1>
+                            </div>
                         </div>
-                        <div className='flex flex-col items-center justify-center mb-[100px]'>
-                            <h1 className='text-[150px] '>fes</h1>
-                            <h3>{timezone}</h3>
-                        </div>
-                        <div>
-                            <img className='w-[150px] h-[150px]' src={temp} alt="temp" />
-                            <h1 className='flex flex-col items-center justify-center'>{tempo}°C</h1>
+                        <div className='flex items-center justify-center gap-[10px] h-[50%] '>
+                            <div className='flex flex-col justify-start  gap-[20px] h-[100%] w-[50%] pb-[30px]  '>
+                                <div className='flex items-center justify-center gap-[10px] top-[499px] left-[470px] absolute'>
+                                    <img className='w-[70px] h-[70px]' src={data.current.is_day === 1 ? day : night} alt="daynight" />
+                                    <h1 className='flex  items-center justify-center'>{data.current.is_day === 1 ? "Day" : "Night"}</h1>
+                                </div>
+                                <div className='flex items-center justify-center gap-[10px] top-[585px] left-[470px] absolute'>
+                                    <img className='w-[70px] h-[70px]' src={humidiy} alt="humidity" />
+                                    <h1 className='flex  items-center justify-center'>Humidity:{data.current.relative_humidity_2m}%</h1>
+                                </div>
+                                <div className='flex items-center justify-center gap-[10px] top-[677px] left-[470px] absolute'>
+                                    <img className='w-[70px] h-[70px]' src={sunrise} alt="sunrise" />
+                                    <h1 className='flex flex-col items-center justify-center'>{data.daily.sunrise[0]}</h1>
+                                </div>
+                            </div>
+                            <div className='flex flex-col justify-end  gap-[20px] h-[100%] w-[50%] pb-[25px]  '>
+                                <div className='flex items-center justify-center gap-[10px] ml-[110px]'>
+                                    <h1 className='flex items-center justify-center'>FL:{data.current.apparent_temperature}°C</h1>
+                                    <img className='w-[70px] h-[70px]' src={temp} alt="temp" />
+                                </div>
+                                <div className='flex items-center justify-center gap-[10px] ml-[120px]'>
+                                    <h1 className='flex items-center justify-center'>{data.current.wind_speed_10m}km/h</h1>
+                                    <img className='w-[70px] h-[70px]' src={wind} alt="wind" />
+                                </div>
+                                <div className='flex items-center justify-center gap-[10px] ml-[50px]'>
+                                    <h1 className='flex items-center justify-center'>{data.daily.sunset[0]}</h1>
+                                    <img className='w-[70px] h-[70px]' src={sunset} alt="sunset" />
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div className='flex items-center justify-center gap-[10px] h-[50%] '>
-                        <div className='flex flex-col justify-start  gap-[20px] h-[100%] w-[50%] pb-[30px]  '>
-                            <div className='flex items-center justify-center gap-[10px] top-[499px] left-[470px] absolute'>
-                                <img className='w-[70px] h-[70px]' src={daynight === 1 ? day : night} alt="daynight" />
-                                <h1 className='flex  items-center justify-center'>{daynight === 1 ? "Day" : "Night"}</h1>
-                            </div>
-                            <div className='flex items-center justify-center gap-[10px] top-[585px] left-[470px] absolute'>
-                                <img className='w-[70px] h-[70px]' src={humidiy} alt="humidity" />
-                                <h1 className='flex  items-center justify-center'>Humidity:{humidity}%</h1>
-                            </div>
-                            <div className='flex items-center justify-center gap-[10px] top-[677px] left-[470px] absolute'>
-                                <img className='w-[70px] h-[70px]' src={sunrise} alt="sunrise" />
-                                <h1 className='flex flex-col items-center justify-center'>{sunrisetime}</h1>
-                            </div>
-                        </div>
-                        <div className='flex flex-col justify-end  gap-[20px] h-[100%] w-[50%] pb-[25px]  '>
-                            <div className='flex items-center justify-center gap-[10px] ml-[110px]'>
-                                <h1 className='flex items-center justify-center'>FL:{feelsLike}°C</h1>
-                                <img className='w-[70px] h-[70px]' src={temp} alt="temp" />
-                            </div>
-                            <div className='flex items-center justify-center gap-[10px] ml-[120px]'>
-                                <h1 className='flex items-center justify-center'>{windspeed}km/h</h1>
-                                <img className='w-[70px] h-[70px]' src={wind} alt="wind" />
-                            </div>
-                            <div className='flex items-center justify-center gap-[10px] ml-[50px]'>
-                                <h1 className='flex items-center justify-center'>{sunsettime}</h1>
-                                <img className='w-[70px] h-[70px]' src={sunset} alt="sunset" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                </div>)}
+
         </div>
     )
 }
