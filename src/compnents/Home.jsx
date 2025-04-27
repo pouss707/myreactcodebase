@@ -5,6 +5,7 @@ import logobmi from '../assets/bmi.png'
 import logousers from '../assets/users.png'
 import postsharinglogo from '../assets/postsharing.png'
 import weatherscreen from '../assets/weatherscreen.png'
+import crud from '../assets/crud.png'
 
 function Home() {
     return (
@@ -19,7 +20,7 @@ function Home() {
                 <Link to="/Usersrendering"><img className='w-[400px]  border-black border-[5px] rounded-[5px] shadow-[4px_4px_black] hover:border-blue-400 hover:shadow-[0px_0px_black] ' src={logousers} alt="users" /></Link>
                 <Link to="/Calculator"><img className='w-[400px]  border-black border-[5px] rounded-[5px] shadow-[4px_4px_black] hover:border-blue-400 hover:shadow-[0px_0px_black] ' src={logocalculator} alt="calculator" /></Link>
                 <Link to="/Weather"><img className='w-[400px]  border-black border-[5px] rounded-[5px] shadow-[4px_4px_black] hover:border-blue-400 hover:shadow-[0px_0px_black] ' src={weatherscreen} alt="weather" /></Link>
-                <Link to="/Crudform"><img className='w-[400px]  border-black border-[5px] rounded-[5px] shadow-[4px_4px_black] hover:border-blue-400 hover:shadow-[0px_0px_black] ' src={weatherscreen} alt="crudform" /></Link>
+                <Link to="/Crudform"><img className='w-[400px]  border-black border-[5px] rounded-[5px] shadow-[4px_4px_black] hover:border-blue-400 hover:shadow-[0px_0px_black] ' src={crud} alt="crudform" /></Link>
             </div>
         </div>
     )
