@@ -65,7 +65,11 @@ function Weather() {
                     setWeather(<img className="h-[150px] w-[150px]" src={mainlyclearmoon} alt="mainlyclearmoon" />);
                     setWeatherText("Mainly clear");
                     break;
-                case '3':
+                case '3-1':
+                    setWeather(<img className="h-[150px] w-[150px]" src={overcast} alt="overcast" />);
+                    setWeatherText("Overcast");
+                    break;
+                case '3-0':
                     setWeather(<img className="h-[150px] w-[150px]" src={overcast} alt="overcast" />);
                     setWeatherText("Overcast");
                     break;
@@ -77,15 +81,27 @@ function Weather() {
                     setWeather(<img className="h-[150px] w-[150px]" src={slightrainmoon} alt="slightrainmoon" />);
                     setWeatherText("Slight rain");
                     break;
-                case '65':
+                case '65-1':
                     setWeather(<img className="h-[150px] w-[150px]" src={heavyrain} alt="heavyrain" />);
                     setWeatherText("Heavy rain");
                     break;
-                case '73':
+                case '65-0':
+                    setWeather(<img className="h-[150px] w-[150px]" src={heavyrain} alt="heavyrain" />);
+                    setWeatherText("Heavy rain");
+                    break;
+                case '73-1':
                     setWeather(<img className="h-[150px] w-[150px]" src={heavysnowfall} alt="heavysnowfall" />);
                     setWeatherText("Snowfall");
                     break;
-                case '99':
+                case '73-0':
+                    setWeather(<img className="h-[150px] w-[150px]" src={heavysnowfall} alt="heavysnowfall" />);
+                    setWeatherText("Snowfall");
+                    break;
+                case '99-1':
+                    setWeather(<img className="h-[150px] w-[150px]" src={thunder} alt="thunder" />);
+                    setWeatherText("Thunderstorm");
+                    break;
+                case '99-0':
                     setWeather(<img className="h-[150px] w-[150px]" src={thunder} alt="thunder" />);
                     setWeatherText("Thunderstorm");
                     break;
