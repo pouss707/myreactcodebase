@@ -17,12 +17,8 @@ function Crudform() {
         'Mango'
     ]);
 
-    const filteredItems = items
-        .filter(item => item.toLowerCase().includes(search.toLowerCase()))
-        .reduce((acc, item) => {
-            acc.push(item);
-            return acc;
-        }, []);
+    const filteredItems = items.filter(item => item.toLowerCase().includes(search.toLowerCase()))
+
 
 
     function hundlesubmit(e) {

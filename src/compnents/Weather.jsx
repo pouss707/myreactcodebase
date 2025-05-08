@@ -37,7 +37,6 @@ function Weather() {
         };
         getData();
     }, []);
-
     useEffect(() => {
         if (data && data.current) {
             const weatherKey = `${data.current.weather_code}-${data.current.is_day}`;
@@ -107,6 +106,7 @@ function Weather() {
     }
 
     return (
+
         <div>
             <header className="bg-blue-400 text-black flex justify-between items-center p-[10px] h-[60px] shadow-[0_0_0_0.05_black] font-bold">
                 <h1 className='text-[24px]'>MyReactCodeBase</h1>
