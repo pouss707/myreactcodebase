@@ -12,7 +12,6 @@ function Home() {
         <div className='bg-white'>
             <section className='flex flex-col justify-center items-center h-screen bg-blue-400 '>
                 <span className='text-black m-0 text-[400%] text-center leading-none block font'>Hello World!!!</span>
-                <p className='text-[20px] text-white'>-------this is how it all started-------</p>
             </section>
             <div className='bg-white h-[100%] w-[100%] flex flex-wrap gap-[50px] p-[20px] mt-[30px] ml-[100px]'>
                 <Link to="/Postsharing"><img className='w-[400px]  border-black border-[5px] rounded-[5px] shadow-[4px_4px_black]  hover:border-blue-400 hover:shadow-[0px_0px_black]' src={postsharinglogo} alt="post" /></Link>
